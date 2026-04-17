@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <iostream>
 #include <cstdio>
 using namespace std;
@@ -56,5 +57,43 @@ int main()
         cnt+=t*b[num];
         printf("%.2f",cnt);
     }
+=======
+#include <cstdio>
+#include <algorithm>
+using namespace std;
+struct coin
+{
+    int m, v;
+} a[110];
+bool cmp(coin x, coin y)
+{
+    return x.v * y.m > y.v * x.m;
+}
+int main()
+{
+    int n, t, c, i;
+    double ans = 0;
+    scanf("%d %d", &n, &t);
+    c = t;
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d %d", &a[i].m, &a[i].v);
+    }
+    sort(a, a + n, cmp);
+    for (i = 0; i < n; i++)
+    {
+        if (a[i].m > c)
+        {
+            break;
+        }
+        c -= a[i].m;
+        ans += a[i].v;
+    }
+    if (i < n)
+    {
+        ans += 1.0 * c / a[i].m * a[i].v;
+    }
+    printf("%.2f", ans);
+>>>>>>> 5c1e01074414ecbf7fc6c3273c687a69729a1c50
     return 0;
 }
