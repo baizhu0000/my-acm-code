@@ -3,7 +3,9 @@ using namespace std;
 int main()
 {
     int ans=0;
-    for(int i=0;i<10;i++){
+    int n;
+    cin>>n;
+    for(int i=1;i<=n;i++){
         ans+=i;
     }
     cout<<ans;
